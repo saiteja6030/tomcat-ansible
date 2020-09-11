@@ -47,10 +47,10 @@
     extra_opts: "--strip-components=1"
     creates: /usr/share/tomcat/bin
 
-- name: Deploywarfile
-  copy:
-    src: /home/centos/WebAppCal-0.0.8.war
-    dest: /usr/share/tomcat/webapps
+#- name: Deploywarfile
+#  copy:
+#    src: /home/centos/WebAppCal-0.0.8.war
+#    dest: /usr/share/tomcat/webapps
 
 - name: Copy tomcat service file
   template:
