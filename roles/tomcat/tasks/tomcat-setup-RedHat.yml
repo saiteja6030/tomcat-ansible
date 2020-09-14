@@ -50,7 +50,7 @@
 - name: Configure Tomcat server port
   #template: src=server.xml dest=/usr/share/tomcat/conf/
   template: 
-    src: templates/server.xml.j2
+    src: server.xml.j2
     dest: /usr/share/tomcat/conf/server.xml
     owner: tomcat
     group: tomcat
