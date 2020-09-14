@@ -58,6 +58,12 @@
     dest: /etc/systemd/system/tomcat.service
   when: ansible_service_mgr == "systemd"
 
+- name: Configure Tomcat server port
+  #template: src=server.xml dest=/usr/share/tomcat/conf/
+  template: 
+    src: server.xml.j2
+    dest: /usr/share/tomcat/conf/server.xml
+
 - name: Start and enable tomcat
   service:
     daemon_reload: yes
@@ -75,7 +81,7 @@
 
 - name: Open tomcat port on the firewall
   firewalld:
-    port: 8080/tcp
+    port: 9090/tcp
     permanent: true
     state: enabled
     immediate: yes
