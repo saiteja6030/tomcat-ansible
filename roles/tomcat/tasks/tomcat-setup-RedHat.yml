@@ -52,9 +52,9 @@
   template: 
     src: server.xml.j2
     dest: /usr/share/tomcat/conf/server.xml
-    owner: tomcat
-    group: tomcat
-    remote_src: yes
+    #owner: tomcat
+    #group: tomcat
+    #remote_src: yes
 
 #- name: Deploywarfile
 #  copy:
