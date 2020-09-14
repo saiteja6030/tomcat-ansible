@@ -46,6 +46,15 @@
     remote_src: yes
     extra_opts: "--strip-components=1"
     creates: /usr/share/tomcat/bin
+  
+- name: Configure Tomcat server port
+  #template: src=server.xml dest=/usr/share/tomcat/conf/
+  template: 
+    src: server.xml.j2
+    dest: /usr/share/tomcat/conf/server.xml
+    owner: tomcat
+    group: tomcat
+    remote_src: yes
 
 #- name: Deploywarfile
 #  copy:
@@ -58,11 +67,6 @@
     dest: /etc/systemd/system/tomcat.service
   when: ansible_service_mgr == "systemd"
 
-- name: Configure Tomcat server port
-  #template: src=server.xml dest=/usr/share/tomcat/conf/
-  template: 
-    src: server.xml.j2
-    dest: /usr/share/tomcat/conf/server.xml
 
 - name: Start and enable tomcat
   service:
