@@ -10,7 +10,8 @@
 
 - name: Install Java 8 CentOS
   yum:
-    name: java-1.8.0-openjdk
+    #name: java-1.8.0-openjdk
+    name: java-1.8.0*
     state: present
 
 - name: Add tomcat group
