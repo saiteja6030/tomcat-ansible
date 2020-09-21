@@ -1,11 +1,11 @@
 pipeline{
   
-  agent { label 'LIN-ANSIBEL-MASTER-172-31-33-11' }
+  agent { label 'ansible' }
 
   stages{
       stage('checkout'){
             steps{
-        git branch: 'PROD-TOMCAT-8080', url: 'https://github.com/svkvc1980/tomcat-ansible.git'
+        git branch: 'PROD-TOMCAT-8080', url: 'https://github.com/saiteja6030/tomcat-ansible.git'
     }
 }
       stage('Build') {
@@ -19,18 +19,3 @@ pipeline{
 }
 
 
-/* This is pretty basic
-pipeline {
-    agent any
-    stages {
-        stage('Build') {
-            steps {
-                sh 'echo "Executing ansible command"'
-                //sh 'cd /home/centos/tomcat-8080/tomcat-ansible/'
-		//sh 'ansible-playbook -i hosts tomcat-nodes tomcat-setup.yml'
-		    sh 'ansible-playbook -i hosts tomcat-setup.yml -vvv' 
-            }
-        }
-    }
-}
-*/
