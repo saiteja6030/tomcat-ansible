@@ -1,11 +1,11 @@
 pipeline{
   
-  agent { label 'LIN-ANSIBEL-MASTER-172-31-33-11' }
+  agent { label 'Ansible' }
 
   stages{
       stage('checkout'){
             steps{
-        git branch: 'QA-TOMCAT-9090', url: 'https://github.com/svkvc1980/tomcat-ansible.git'
+        git branch: 'QA-TOMCAT-9090', url: 'https://github.com/saiteja6030/tomcat-ansible.git'
     }
 }
       stage('Build') {
