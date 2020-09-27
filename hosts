@@ -1,4 +1,4 @@
 [tomcat-nodes]
 
-172.31.62.254 ansible_ssh_private_key_file=/home/ec2-user/devops.pem ansible_ssh_user=centos # Add Server IP address, one line per server
+172.31.19.203 ansible_ssh_private_key_file=/home/ec2-user/devops.pem ansible_ssh_user=centos # Add Server IP address, one line per server
 
